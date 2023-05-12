@@ -1,0 +1,88 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    height: 100vh;  /*view height 全螢幕*/
+    background-color:rgb(98, 90, 80);
+    transition:0.5s;
+}
+
+body.dark{
+    background-color:rgb(65, 64, 64);
+}
+
+#toggle{
+    position:absolute;
+    top:10%;
+    left:47%;
+    width:120px;
+    height:60px;
+    border-radius:60px;
+    background-color:black;
+    cursor:pointer;
+    box-shadow:inset 2px 5px 15px gray;
+    
+}
+
+#toggle .button{
+    width:60px; 
+    height:60px;
+    background-color:white;
+    border-radius:50%;
+    position:absolute;
+    /* top: 0px; */
+    left:0px;
+    transform:scale(0.9);
+    box-shadow:inset -7px -7px 7px 1px lightgray;
+    transition:0.5s;
+}
+/* 點擊效果，增加 */
+.button:hover{
+    background:#ffdc84;
+}
+
+.button::after{
+    content:'';
+    position: absolute;
+    inset:0;
+    border-radius:0.2rem;
+
+    transition:1s;
+    box-shadow: 0 0 30px 15px #ffdc84;
+    opacity:0;
+}
+.button:active::after{
+    transition:0s;
+    box-shadow:0 0 0px 0px #ffdc84;
+    opacity:1;
+}
+
+
+#toggle.dark .button{
+    left:60px;
+    transition:0.5s;
+}
+
+#toggle.dark{
+    background-color:green;
+}
+
+h2{
+    text-align:center;
+    margin:20px;
+}
+
+h2.dark{
+    color:white;
+}
+
+img{
+    height:700px;
+    width:350px;
+    position:absolute;
+    top:20%;
+    left:41%;
+    
+}
